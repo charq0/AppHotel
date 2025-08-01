@@ -7,7 +7,7 @@
              BackgroundColor="{StaticResource Gray900}">
     <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center"
                          Padding="5"
-                         Spacing='5'>
+                         Spacing='10'>
         <Label Text="Contratar Hospedagem" FontSize="30"/>
         <Frame BackgroundColor="{StaticResource Gray950}">
             
@@ -40,7 +40,8 @@
                 </Grid>
                 <Label Text="Suites"/>
                 <Picker x:Name="pik_suite"
-                        Title="Acomodações"/>
+                        Title="Acomodações"
+                        ItemDisplayBinding="{Binding Descricao}"/>
 
                 <Frame BackgroundColor="Transparent">
                     <VerticalStackLayout>
@@ -58,8 +59,10 @@
                     </VerticalStackLayout>
                     
                 </Frame>
+                
             </VerticalStackLayout>
-            
+           
         </Frame>
+        <Button Margin="4" Text="Confirmar" Clicked="Button_Clicked"/>
     </VerticalStackLayout>
 </ContentPage>
