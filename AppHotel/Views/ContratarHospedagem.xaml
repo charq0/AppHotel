@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHotel.Views.ContratarHospedagem"
+             Title="ContratarHospedagem"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource Gray900}">
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center"
+                         Padding="5"
+                         Spacing='5'>
+        <Label Text="Contratar Hospedagem" FontSize="30"/>
+        <Frame BackgroundColor="{StaticResource Gray950}">
+            
+            <VerticalStackLayout>
+                <Grid RowSpacing="7" RowDefinitions="Auto, Auto" ColumnDefinitions="*, *, 2*">
+
+                <Label Grid.Row="0" Grid.Column="0" TextColor="White" Text="Adultos:"/>
+                <Label Grid.Row="0" Grid.Column="1" TextColor="White" Text="{Binding Value}"
+                       BindingContext="{x:Reference step_adultos}"/>
+
+                <Label Grid.Row="1" Grid.Column="0" TextColor="White" Text="Crianças:"/>
+                <Label Grid.Row="1" Grid.Column="1" TextColor="White" Text="{Binding Value}"
+                       BindingContext="{x:Reference step_criança}"/>
+
+                    <Stepper x:Name="step_adultos"
+                         Grid.Column="2"
+                         Grid.Row="0"
+                         Maximum="9"
+                         Minimum="1"
+                         Increment="1"
+                             />
+                    <Stepper x:Name="step_criança"
+                             Grid.Column="2"
+                             Grid.Row="1"
+                             Maximum="9"
+                             Minimum="0"
+                             Increment="1"
+                             />
+
+                </Grid>
+                <Label Text="Suites"/>
+                <Picker x:Name="pik_suite"
+                        Title="Acomodações"/>
+
+                <Frame BackgroundColor="Transparent">
+                    <VerticalStackLayout>
+                        <Label Text="Periodo de Estadia"/>
+                        <HorizontalStackLayout>
+                            <Label Text="Check-in:"/>
+                            <DatePicker x:Name="dtpik_checkin" Format="dd/MM/yyyy"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout>
+                            <Label Text="Check-out"/>
+                            <DatePicker x:Name="dtpik_checkout" Format="dd/MM/yyyy"/>
+                        </HorizontalStackLayout>
+                        
+                    </VerticalStackLayout>
+                    
+                </Frame>
+            </VerticalStackLayout>
+            
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
