@@ -5,7 +5,7 @@
              Title="CalculoFinalHospedagem"
              NavigationPage.HasNavigationBar="False">
     <VerticalStackLayout Spacing="5" VerticalOptions="Center" HorizontalOptions="Center">
-        <Label Margin="10 0" Text="Valor Final da Hospedagem"
+        <Label Margin="0,0,0, 10" Text="Valor Final da Hospedagem"
                FontSize="24"/>
         <Frame>
             <VerticalStackLayout>
@@ -14,9 +14,9 @@
                     <Label Margin="2" Grid.Column="0" Grid.Row="1" Text="Adultos:"/>
                     <Label Margin="2" Grid.Column="0" Grid.Row="2" Text="Crianças:"/>
 
-                    <Label Margin="2" Grid.Column="1" Grid.Row="0" Text="Suite de Luxo"/>
-                    <Label Margin="2" Grid.Column="1" Grid.Row="1" Text="2"/>
-                    <Label Margin="2" Grid.Column="1" Grid.Row="2" Text="3"/>
+                    <Label Margin="2" Grid.Column="1" Grid.Row="0" Text="{Binding quartoselecionado.Descricao}"/>
+                    <Label Margin="2" Grid.Column="1" Grid.Row="1" Text="{Binding QntAdulto}"/>
+                    <Label Margin="2" Grid.Column="1" Grid.Row="2" Text="{Binding QntCrianca}"/>
 
                 </Grid>
                       
@@ -24,13 +24,15 @@
         </Frame>
         <Frame>
             <VerticalStackLayout>
-                <Grid ColumnDefinitions="*, *" RowDefinitions="*, *, *">
+                <Grid ColumnDefinitions="*, *,*" RowDefinitions="*, *, *">
                 
                     <Label Margin="3" Grid.Column="0" Grid.Row="0" Text="Check-in:"/>
                     <Label Margin="3" Grid.Column="0" Grid.Row="1" Text="Check-out:"/>
+                    <Label Margin="3" Grid.Column="0" Grid.Row="2" Text="Estadia:"/>
 
-                    <Label Margin="3" Grid.Column="1" Grid.Row="0" Text="22/07/2025"/>
-                    <Label Margin="3" Grid.Row="1" Grid.Column="1" Text="25/09/2025"/>
+                    <Label Margin="3" Grid.Column="1" Grid.Row="0" Text="{Binding DataCheckin, StringFormat='{}{0:dd/MM/yyyy}' }"/>
+                    <Label Margin="3" Grid.Row="1" Grid.Column="1" Text="{Binding DataCheckout, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                    <Label Margin="3" Grid.Row="2" Grid.Column="1" Text="{Binding Estadia, StringFormat='{0} Dia(s)'}"/>
                 </Grid>
 
             </VerticalStackLayout>
@@ -41,10 +43,10 @@
             <HorizontalStackLayout>
                 <Grid ColumnDefinitions="*, *">
                     <Label Margin="3" Grid.Column="0" Text="Valor da Reserva:"/>
-                    <Label Margin="3" Grid.Column="1" Text="R$ 99,99"/>
+                    <Label Margin="3" Grid.Column="1" Text="{Binding ValorFinal, StringFormat='{}{0:c}'}"/>
                 </Grid>
             </HorizontalStackLayout>
         </Frame>
-        <Button Margin="10 0" Text="Voltar" Clicked="Button_Clicked"/>
+        <Button Margin="0, 10" Text="Voltar" Clicked="Button_Clicked"/>
     </VerticalStackLayout>
 </ContentPage>

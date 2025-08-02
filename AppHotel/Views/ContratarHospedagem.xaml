@@ -41,14 +41,16 @@
                 <Label Text="Suites"/>
                 <Picker x:Name="pik_suite"
                         Title="Acomodações"
-                        ItemDisplayBinding="{Binding Descricao}"/>
+                        ItemDisplayBinding="{Binding Descricao}"
+                        SelectedIndex="3"/>
 
                 <Frame BackgroundColor="Transparent">
                     <VerticalStackLayout>
                         <Label Text="Periodo de Estadia"/>
                         <HorizontalStackLayout>
                             <Label Text="Check-in:"/>
-                            <DatePicker x:Name="dtpik_checkin" Format="dd/MM/yyyy"/>
+                            <DatePicker x:Name="dtpik_checkin" Format="dd/MM/yyyy"
+                                        DateSelected="dtpik_checkin_DateSelected"/>
                         </HorizontalStackLayout>
 
                         <HorizontalStackLayout>

@@ -5,10 +5,13 @@ public partial class CalculoFinalHospedagem : ContentPage
 	public CalculoFinalHospedagem()
 	{
 		InitializeComponent();
+
 	}
 
     private void Button_Clicked(object sender, EventArgs e)
     {
+
+
 		try
 		{
 			Navigation.PopAsync();
